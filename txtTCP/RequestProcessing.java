@@ -1,8 +1,9 @@
-package TCP;
+package txtTCP;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.*;
 import java.net.Socket;
 public class RequestProcessing extends Thread{
     Socket channel;
@@ -13,10 +14,13 @@ public class RequestProcessing extends Thread{
         try {
             OutputStream os = channel.getOutputStream();
             InputStream is = channel.getInputStream();
+            DataInputStream dis = new DataInputStream(channel.getInputStream());
+            DataOutputStream dos = new DataOutputStream(channel.getOutputStream());
             while(true){
-                int n = is.read();
-                if(n == -1 ) break;
-                os.write(n);
+                String n = dis.readUTF();
+                //int n = is.read();
+                if(n == null ) break;
+                dos.writeUTF(n);
             }
         } catch (IOException ie) {
             //TODO: handle exception

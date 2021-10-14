@@ -11,7 +11,7 @@ import java.nio.Buffer;
 
 import javax.xml.crypto.Data;
 public class client {
-    public final static int serverPort = 7 ;
+    public final static int serverPort = 8888 ;
     public static void main(String[] args) {
         try {
             DatagramSocket ds = new DatagramSocket();
@@ -19,11 +19,12 @@ public class client {
             while(true){
                 InputStreamReader isr  = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(isr);
+                System.out.println("Nhap vao bat ky");
                 String theString = br.readLine();
                 byte[] data = theString.getBytes();
                 DatagramPacket dp = new DatagramPacket(data , data.length, server, serverPort);
                 ds.send(dp);
-                byte[] buffer = new byte[6000];
+                byte[] buffer = new byte[60000];
                 DatagramPacket incoming = new DatagramPacket(buffer, buffer.length);
                 ds.receive(incoming);
                 System.out.println(new String(incoming.getData(),0,incoming.getLength()));
