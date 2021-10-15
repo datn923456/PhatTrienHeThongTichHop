@@ -43,9 +43,7 @@ public class server {
                             FileReader fr = new FileReader(txt1);
                             BufferedReader br = new BufferedReader(fr);
                             String line ="";
-                            System.out.println("2222");
                             while(true){
-                                System.out.println("333");
                                 line = br.readLine();
                                 if(line == null){
                                     break;
@@ -57,7 +55,6 @@ public class server {
                                 in.println(tra);
                             }
                             br.close();
-                            System.out.println("444");
                         }
                         //os.write(n);
                         rp.start();

@@ -29,17 +29,15 @@ public class client {
                 String nhap = sn.nextLine();
                 dos.writeUTF(nhap);
                 String sda = trafile.nextLine();
-                while(!sda.trim().equals("")){
+                while(sda.length() >= 1){
                         String sd = trafile.nextLine();
+                        // System.out.println(sd);
                         System.out.println(sd);
-                        // if(sd.equals("null") || sd.length()<1)
-                        // {
-                            
-                        // }
-                        // else{
-                        //     System.out.println(sd);
-                        // }
-                        System.out.println("1");
+                        if(sd.equals("null") || sd.length()<1)
+                        {
+                            break;
+                        }
+                             //System.out.println(sd);
                 }
                 //String tra = dis.readUTF();
                 //while(dis.available() >0){
