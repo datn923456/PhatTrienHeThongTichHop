@@ -8,13 +8,13 @@ import java.rmi.registry.Registry;
 import java.time.LocalDate;
 
 public class client {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotBoundException{
        try {
-        Registry reg=LocateRegistry.getRegistry("localhost",6789);
+        Registry reg=LocateRegistry.getRegistry(6789);
         hellointerface obj=(hellointerface)reg.lookup("Hello");
         System.out.println( obj.printHello());
 
-    } catch (RemoteException | NotBoundException e) {
+    } catch (RemoteException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
     }
