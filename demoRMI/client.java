@@ -11,7 +11,7 @@ public class client {
     public static void main(String[] args) throws NotBoundException{
        try {
         Registry reg=LocateRegistry.getRegistry(6789);
-        hellointerface obj=(hellointerface)reg.lookup("Hello");
+        hellointerface obj=(hellointerface)reg.lookup("tuan8");
         System.out.println( obj.printHello());
 
     } catch (RemoteException e) {

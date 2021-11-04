@@ -11,7 +11,7 @@ public class server {
             System.out.println("Exporting HelloImpl obj");
             LocateRegistry.createRegistry(6789);
             Registry reg= LocateRegistry.getRegistry(6789);
-            reg.bind("Hello", obj);
+            reg.bind("tuan8", obj);
             System.out.println("HelloObj registry");
 
         } catch (Exception e) {
