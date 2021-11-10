@@ -12,7 +12,7 @@ public class Server {
             LocateRegistry.createRegistry(7070);
             Registry reg = LocateRegistry.getRegistry(7070);
             reg.bind("NguyenTinDat", obj);
-            System.out.println("Da dang ky doi tuong Nguyen Tin Dat Tuan 8 voi registry");
+            System.out.println("registry");
 
         } catch (Exception e) {
             e.printStackTrace();
