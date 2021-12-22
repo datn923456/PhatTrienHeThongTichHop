@@ -1,4 +1,4 @@
-package baithi;
+package bai10;
 
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
